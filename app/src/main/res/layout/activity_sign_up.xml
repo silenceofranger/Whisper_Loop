@@ -7,16 +7,17 @@
     android:background="@drawable/two"
     tools:context=".SignUp">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="263dp"
-        android:layout_height="201dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilerg0"
+        android:layout_width="151dp"
+        android:layout_height="130dp"
+        android:src="@drawable/photocamera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
-        app:srcCompat="@drawable/whisper" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <TextView
         android:id="@+id/textView4"
@@ -122,7 +123,7 @@
         app:layout_constraintVertical_bias="0.777" />
 
     <EditText
-        android:id="@+id/rgemail"
+        android:id="@+id/signUpEmailId1"
         android:layout_width="259dp"
         android:layout_height="52dp"
         android:ems="10"

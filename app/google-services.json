@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "350148962604",
-    "project_id": "whisperloop-95c90",
-    "storage_bucket": "whisperloop-95c90.appspot.com"
+    "project_number": "825995443668",
+    "firebase_url": "https://whisper-650ce-default-rtdb.firebaseio.com",
+    "project_id": "whisper-650ce",
+    "storage_bucket": "whisper-650ce.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:350148962604:android:772376913837ef4d6e6489",
+        "mobilesdk_app_id": "1:825995443668:android:e9f83eb15c3829e89d2a41",
         "android_client_info": {
           "package_name": "com.example.whisperloop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "350148962604-nkcnvcg8h9j9453h8qdln0eldlvcpfsd.apps.googleusercontent.com",
+          "client_id": "825995443668-1a5mfp69bvsuc75ktvans6acsre73r91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.whisperloop",
+            "certificate_hash": "a9c7b12a8cd75d9e233fd6540bce6e79a13b56a0"
+          }
+        },
+        {
+          "client_id": "825995443668-1lve25d1rp3l8f0ajfdtn9snkr4pn1ul.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCmWEwEwKrIEOn-ThbFhVvRMDqvejr5e4k"
+          "current_key": "AIzaSyD5UUPnNDSXXoMYa7LgPlkVv7NHOKMZ6LM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "350148962604-nkcnvcg8h9j9453h8qdln0eldlvcpfsd.apps.googleusercontent.com",
+              "client_id": "825995443668-1lve25d1rp3l8f0ajfdtn9snkr4pn1ul.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
