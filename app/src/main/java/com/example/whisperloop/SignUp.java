@@ -23,9 +23,9 @@ import com.google.firebase.storage.StorageReference;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignUp extends AppCompatActivity {
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+    FirebaseAuth firebaseAuth;
+    FirebaseDatabase firebaseDatabase;
+    FirebaseStorage firebaseStorage;
 
     Uri imageUri;
     String imageUriString;
@@ -33,6 +33,9 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         TextView logInButton = findViewById(R.id.loginbut);
@@ -55,15 +58,11 @@ public class SignUp extends AppCompatActivity {
                 if (validate(SignUp.this, emailInput, passwordInput)) {
                     try {
                         firebaseAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(task -> {
-                            System.out.println("CK1");
                             if (task.isSuccessful()) {
                                 String id = task.getResult().getUser().getUid();
-                                System.out.println("CK2");
                                 DatabaseReference databaseReference = firebaseDatabase.getReference().child("user").child(id);
-                                StorageReference storageReference = firebaseStorage.getReference().child("upload").child(id);
-                                System.out.println("CK3");
-
                                 if (imageUri != null) {
+                                    StorageReference storageReference = firebaseStorage.getReference().child("upload").child(id);
                                     storageReference.putFile(imageUri).addOnCompleteListener(task13 -> {
                                         if (task13.isSuccessful()) {
                                             storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
@@ -87,9 +86,7 @@ public class SignUp extends AppCompatActivity {
                                     imageUriString = "https://firebasestorage.googleapis.com/v0/b/whisper-650ce.appspot.com/o/ProfilePic.jpeg?alt=media&token=d3de306d-f0ab-4409-a1a2-691a853bb769";
                                     User user = new User(id, userNameInput, emailInput, passwordInput, imageUriString, status);
                                     databaseReference.setValue(user).addOnCompleteListener(task1 -> {
-                                        System.out.println("CK5");
                                         if (task1.isSuccessful()) {
-//                                            progressDialog.show();
                                             Intent intent = new Intent(SignUp.this, MainActivity.class);
                                             startActivity(intent);
                                             finish();
