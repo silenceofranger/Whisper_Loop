@@ -8,7 +8,7 @@
     tools:context=".SignUp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profilerg0"
+        android:id="@+id/profilePicId1"
         android:layout_width="151dp"
         android:layout_height="130dp"
         android:src="@drawable/photocamera"
@@ -140,7 +140,7 @@
         app:layout_constraintVertical_bias="0.572" />
 
     <EditText
-        android:id="@+id/rgpassword"
+        android:id="@+id/passwordId1"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:ems="10"
@@ -157,7 +157,7 @@
         app:layout_constraintVertical_bias="0.675" />
 
     <EditText
-        android:id="@+id/rgrepassword"
+        android:id="@+id/confirmPasswordId1"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:ems="10"
@@ -174,7 +174,7 @@
         app:layout_constraintVertical_bias="0.777" />
 
     <Button
-        android:id="@+id/signupbutton"
+        android:id="@+id/signupButtonId1"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_45sdp"
         android:text="Sign Up"
@@ -186,7 +186,7 @@
         app:layout_constraintVertical_bias="0.892" />
 
     <TextView
-        android:id="@+id/loginbut"
+        android:id="@+id/loginButtonId1"
         android:layout_width="@dimen/_124sdp"
         android:layout_height="33dp"
         android:gravity="center"
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.958" />
 
     <EditText
-        android:id="@+id/rgusername"
+        android:id="@+id/signupUserNameId1"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:ems="10"

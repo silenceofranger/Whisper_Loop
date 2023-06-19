@@ -1,17 +1,14 @@
 package com.example.whisperloop;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.whisperloop.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-        cameraButton = findViewById(R.id.camBut);
-        settingButton = findViewById(R.id.settingBut);
         databaseReference = database.getReference().child("user");
         List<User> userArrayList = new ArrayList<>();
         databaseReference.addValueEventListener(new ValueEventListener() {

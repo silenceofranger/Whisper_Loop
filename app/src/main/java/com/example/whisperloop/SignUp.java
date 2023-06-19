@@ -5,12 +5,12 @@ import static com.example.whisperloop.util.Validator.validate;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.whisperloop.model.User;
@@ -23,13 +23,13 @@ import com.google.firebase.storage.StorageReference;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignUp extends AppCompatActivity {
+    private static final int GALLERY_REQUEST_CODE = 2342;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
     FirebaseStorage firebaseStorage;
-
     Uri imageUri;
     String imageUriString;
-    String status = "Hey I'm Using This Application";
+    String status = "Hey I'm Using Whisper Loop";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +38,15 @@ public class SignUp extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        TextView logInButton = findViewById(R.id.loginbut);
-        EditText singUpUserName = findViewById(R.id.rgusername);
+        TextView logInButton = findViewById(R.id.loginButtonId1);
+        EditText singUpUserName = findViewById(R.id.signupUserNameId1);
         EditText singUpEmailId = findViewById(R.id.signUpEmailId1);
-        EditText signUpPassword = findViewById(R.id.rgpassword);
-        EditText signUpConfirmPassword = findViewById(R.id.rgrepassword);
-        CircleImageView profilePicture = findViewById(R.id.profilerg0);
-        Button signUpButton = findViewById(R.id.signupbutton);
-
+        EditText signUpPassword = findViewById(R.id.passwordId1);
+        EditText signUpConfirmPassword = findViewById(R.id.confirmPasswordId1);
+        CircleImageView profilePicture = findViewById(R.id.profilePicId1);
+        Button signUpButton = findViewById(R.id.signupButtonId1);
         setSignInButtonOnClickListener(logInButton);
         setProfilePictureOnClickListener(profilePicture);
-
         signUpButton.setOnClickListener(v -> {
             String userNameInput = singUpUserName.getText().toString();
             String emailInput = singUpEmailId.getText().toString();
@@ -112,23 +110,26 @@ public class SignUp extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        CircleImageView profilePicture = findViewById(R.id.profilerg0);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 10) {
-            if (data != null) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == GALLERY_REQUEST_CODE && data != null) {
                 imageUri = data.getData();
-                profilePicture.setImageURI(imageUri);
             }
         }
     }
 
+
     private void setProfilePictureOnClickListener(CircleImageView profilePicture) {
         profilePicture.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setType("image/*");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"), 11);
+            Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE);
+
+
+//            Intent intent = new Intent();
+//            intent.setType("image/*");
+//            intent.setAction(Intent.ACTION_GET_CONTENT);
+//            startActivityForResult(Intent.createChooser(intent, "Select Picture"), 11);
         });
     }
 
