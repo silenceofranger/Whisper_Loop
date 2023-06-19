@@ -2,7 +2,7 @@
 
 ### Sign In Screen
 
-![](/Screenshot 2023-06-20 at 4.16.32 AM.png)
+![](/signIn.png)
 
 ### Sign Up Screen
 
