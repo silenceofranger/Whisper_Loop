@@ -1,8 +1,8 @@
 # Whisper_Loop
 
 ### Sign In Screen
+<img src="/signIn.png" alt="Sign In Screen" width="300" height="300">
 
-![](/signIn.png)
 
 ### Sign Up Screen
 
