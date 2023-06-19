@@ -1,4 +1,5 @@
 # Whisper_Loop
+## Tech stack used : Java, Firebase and XML.
 
 ### Sign In Screen
 <img src="/signIn.png" alt="Sign In Screen" width="300" height="600">
@@ -6,12 +7,12 @@
 
 ### Sign Up Screen
 
-![](/signUp.png)
+<img src="/signUp.png" alt="Sign In Screen" width="300" height="600">
 
 ### Friends List (Home Page)
 
-![](/home.png)
+<img src="/home.png" alt="Sign In Screen" width="300" height="600">
 
 ### Chat Screen
 
-![](/chat.png)
+<img src="/chat.png" alt="Sign In Screen" width="300" height="600">
