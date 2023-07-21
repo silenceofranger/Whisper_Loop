@@ -1,4 +1,4 @@
-# Whisper_Loop
+# Whisper Loop
 Welcome to Wisper Loop, the Android chatting app designed to redefine your communication experience. With cutting-edge features and a seamless user interface, Wisper Loop brings real-time chat and much more to your fingertips. Connect with friends, family, and colleagues like never before, all powered by a robust tech stack consisting of Java, XML, and Firebase.
 
 ## Features
