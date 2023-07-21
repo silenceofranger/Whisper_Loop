@@ -8,7 +8,7 @@ Real-Time Chat: Stay connected with your loved ones instantly through real-time 
 User-Friendly Interface: We understand the importance of simplicity and ease of use. Wisper Loop boasts an intuitive interface, ensuring effortless navigation for users of all ages.
 
 Privacy and Security: Your safety is our utmost priority. Wisper Loop implements state-of-the-art security measures to safeguard your data and conversations from unauthorized access.
-## Tech stack : 
+## Tech stack
 * Java
 * Firebase
 * XML
